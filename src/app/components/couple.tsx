@@ -9,7 +9,7 @@ export default function Couple() {
   const { groom, bride, guest } = useMarriageDetails();
 
   return (
-    <div id="couple" className="flex justify-center bg-white text-gray-800 py-8">
+    <div id="couple" className="flex justify-center bg-white text-gray-800 pt-8 min-h-screen">
       <div className="text-center px-4">
         <div className={`${textCookie.className} text-center`}>
           <span className="text-4xl bg-clip-text mt-2">بِسمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</span>
@@ -36,7 +36,7 @@ export default function Couple() {
                   width: "100%",
                   height: "auto"
                 }}
-                src="/assets/images/photo_male.png" 
+                src="/assets/images/photo_male_blue.png" 
                 alt="groom"
               />
             </div>
@@ -57,7 +57,7 @@ export default function Couple() {
                   width: "100%",
                   height: "auto"
                 }}
-                src="/assets/images/photo_female.png" 
+                src="/assets/images/photo_female_blue.png" 
                 alt="bride"
               />
             </div>

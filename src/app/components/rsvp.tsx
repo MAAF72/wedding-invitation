@@ -41,7 +41,7 @@ export default function RSVP() {
   };
 
   return (
-    <div id="rsvp" className="flex flex-col items-center bg-white text-gray-800">
+    <div id="rsvp" className="flex flex-col items-center justify-between bg-white text-gray-800 pt-8 min-h-screen">
       <Divider rotate={true}/>
       <div className="text-center px-4">
         <h2 className={`text-6xl font-semibold ${textCookie.className} mb-4`}>Kehadiran</h2>
@@ -60,7 +60,7 @@ export default function RSVP() {
                 onChange={() => setAttendance((prev) => !prev)} 
               />
 
-              <div className="w-1/2 h-full bg-red-500 rounded-full transition-all shadow-md absolute left-1/2 peer-checked/rsvp:left-0 peer-checked/rsvp:bg-blue-500 group-hover:shadow-xl"></div>
+              <div className="w-1/2 h-full bg-[#c86969] rounded-full transition-all shadow-md absolute left-1/2 peer-checked/rsvp:left-0 peer-checked/rsvp:bg-[#698fc8] group-hover:shadow-xl"></div>
 
               <span className="relative w-1/2 h-full flex items-center justify-center font-bold text-black peer-checked/rsvp:text-white transition duration-300">Hadir</span>
               <span className="relative w-1/2 h-full flex items-center justify-center font-bold text-white peer-checked/rsvp:text-black transition duration-300">Tidak Hadir</span>
@@ -78,7 +78,7 @@ export default function RSVP() {
           
           <button 
             type="submit" 
-            className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg shadow-lg transition" 
+            className="bg-[#698fc8] hover:bg-[#5677ba] text-white font-semibold px-6 py-3 rounded-lg shadow-lg transition" 
             disabled={submissionStatus === "loading"}
           >
             {submissionStatus === "loading" ? "Mengirim..." : "Konfirmasi"}

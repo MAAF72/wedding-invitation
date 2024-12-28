@@ -2,14 +2,11 @@ import { useMarriageDetails } from "@/app/contexts/marriage";
 
 import { textCookie } from "@/app/fonts/cookie";
 
-import Divider from "@/app/components/divider";
-
 export default function Event() {
   const { event } = useMarriageDetails();
 
   return (
-    <div id="event" className="flex flex-col items-center bg-green-500 text-white">
-      <Divider rotate={true}/>
+    <div id="event" className="flex flex-col items-center bg-white text-gray-800 pt-8 min-h-screen">
       <div className="text-center px-4">
         <h2 className={`text-6xl font-semibold ${textCookie.className} mb-4`}>Detail Acara</h2>
         <div className="mt-8 flex flex-col sm:flex-row w-full justify-center md:space-x-4 text-black">
@@ -29,14 +26,13 @@ export default function Event() {
         {/* <div className="pt-4">
           <i>*Acara akan diselenggarakan dengan tamu pria dan wanita yang dipisah (Walimatul Infishal)</i>
         </div> */}
-        <div className="mt-8">
+        <div className="mt-12">
           <p className="text-xl font-semibold"><i className="fa-solid fa-location-dot"></i> {event.location.name}</p>
           <div className="relative overflow-hidden pb-[75%] mt-4 rounded-xl">
             <iframe className="absolute top-0 left-0 w-full h-full" src={event.location.maps} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
       </div>
-      <Divider/>
     </div>
   )
 }
