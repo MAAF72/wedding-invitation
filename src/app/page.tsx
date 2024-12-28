@@ -4,8 +4,6 @@ import { useEffect, useState } from "react";
 
 import { MarriageProvider } from "@/app/contexts/marriage";
 
-import { supabase } from "@/app/utils/supabaseClient";
-
 import Cover from "@/app/components/cover";
 import Ayah from "@/app/components/ayah";
 import Couple from "@/app/components/couple";
@@ -62,19 +60,31 @@ export default function Home() {
 
     if (guestSlug) {
       const fetchGuest = async () => {
-        const { data, error } = await supabase
-          .from("guests")
-          .select("slug, name")
-          .eq("slug", guestSlug)
-          .single();
+        const response = await fetch(`/api/guest?slug=${guestSlug}`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
 
-        if (error) {
-          setError("Undangan bermasalah atau tidak ditemukan");
-          setGuest(null);
-        } else {
-          setGuest(data);
+        if (response.status == 200) {
+          const resJson = await response.json();
+
+          setGuest(resJson);
           setError(null);
+
+          return
+        } 
+
+        if (response.status == 404) {
+          setError("Undangan tidak ditemukan");
+          setGuest(null);
+
+          return
         }
+
+        setError("Undangan bermasalah");
+        setGuest(null);
       };
 
       fetchGuest();

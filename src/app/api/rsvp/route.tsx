@@ -25,7 +25,7 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ message: "RSVP submitted successfully!" }, { status: 200 });
   } catch (error) {
-    console.error(error);
-    return NextResponse.json({ message: "Failed to submit RSVP." }, { status: 500 });
+    console.error("Unexpected error:", error);
+    return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
   }
 }
