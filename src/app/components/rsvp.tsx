@@ -23,7 +23,8 @@ export default function RSVP() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          guest: guest.slug,
+          guest_slug: guest.slug,
+          guest_name: guest.name,
           is_will_attend: attendance,
           message: message,
         }),
