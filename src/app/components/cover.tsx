@@ -74,14 +74,14 @@ export default function Cover(props: CoverProps) {
         />
       </div>
 
-      <div className="flex flex-col items-center justify-center flex-grow pt-8 text-center">
-        <p className="text-lg sm:text-xl font-semibold mb-8">Pernikahan</p>
-        <p className={`text-7xl sm:text-8xl ${textCookie.className}`}>{groom.nickname}</p>
-        <p className={`text-5xl sm:text-6xl py-2 ${textCookie.className}`}>&</p>
-        <p className={`text-7xl sm:text-8xl ${textCookie.className}`}>{bride.nickname}</p>
-        <p className="text-xl sm:text-2xl font-light pt-12 sm:pt-16">{event.mainDate}</p>
-        <p className="text-lg sm:text-xl pt-14 sm:pt-20">Kepada:</p>
-        <p className="text-xl sm:text-2xl pt-2">{guest.name}</p>
+      <div className="flex flex-col items-center justify-center flex-grow pt-8 pb-4 text-center">
+        <p className="text-lg md:text-xl font-semibold mb-8">Pernikahan</p>
+        <p className={`text-7xl md:text-8xl ${textCookie.className}`}>{groom.nickname}</p>
+        <p className={`text-5xl md:text-6xl py-2 ${textCookie.className}`}>&</p>
+        <p className={`text-7xl md:text-8xl ${textCookie.className}`}>{bride.nickname}</p>
+        <p className="text-xl md:text-2xl font-light pt-12">{event.mainDate}</p>
+        <p className="text-lg md:text-xl pt-14">Kepada:</p>
+        <p className="text-xl md:text-2xl pt-2">{guest.name}</p>
 
         <div className="mt-8 w-16 h-1 bg-white rounded-lg"></div>
       </div>
