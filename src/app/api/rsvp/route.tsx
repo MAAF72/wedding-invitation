@@ -27,7 +27,7 @@ export async function POST(req: NextRequest) {
     }
     
     const notify_message = [
-      `<b>${guest_name}</b> ${is_will_attend ? 'akan hadir' : 'tidak hadir'}`,
+      `<b>${guest_name}</b> ${is_will_attend ? 'akan hadir ✔️' : 'tidak hadir ❌'}`,
       ``,
       `Pesan:`,
       message,

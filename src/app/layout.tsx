@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Script src="https://kit.fontawesome.com/c4174e8d2c.js"></Script>
-      <body className={`${roboto.className} antialiased`}>
+      <body className={`${roboto.className} antialiased overflow-x-hidden`}>
         {children}
       </body>
     </html>

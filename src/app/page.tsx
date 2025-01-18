@@ -12,37 +12,7 @@ import RSVP from "@/app/components/rsvp";
 import Closing from "@/app/components/closing";
 import WidgetMusic from "@/app/components/widget/music";
 
-const marriageDetails = {
-  groom: {
-    name: "Muhammad Abdurrohman Al Fatih",
-    nickname: "Fatih",
-    order: "Pertama",
-    father: "Bapak Amin Syafi'i",
-    mother: "Ibu Ida Ristianti",
-  },
-  bride: {
-    name: "Fathiyyah Nurul Islami",
-    nickname: "Fathiyyah",
-    order: "Pertama",
-    father: "Bapak Muhammad Arief Santoso",
-    mother: "Ibu Ely Suryani",
-  },
-  event: {
-    mainDate: "Sabtu, 23 Februari 2025",
-    akad: {
-      date: "Sabtu, 23 Februari 2025",
-      time: "07:00 - 09:00",
-    },
-    resepsi: {
-      date: "Sabtu, 23 Februari 2025",
-      time: "09:00 - 15:00",
-    },
-    location: {
-      name: "Masjid Jami Al-Muhajirin, Bekasi",
-      maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.476306587357!2d107.0078312!3d-6.200721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698bfd667e32b7%3A0x345ea61e5269ba4c!2sMasjid%20Jami%20Al-Muhajirin!5e0!3m2!1sen!2sid!4v1734969343441!5m2!1sen!2sid"
-    }
-  },
-}
+import { marriageDetails } from "@/app/data";
 
 interface GuestData {
   slug: string;

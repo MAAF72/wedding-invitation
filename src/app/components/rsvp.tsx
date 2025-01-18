@@ -42,7 +42,7 @@ export default function RSVP() {
   };
 
   return (
-    <div id="rsvp" className="flex flex-col items-center justify-between bg-white text-gray-800 pt-8 min-h-screen">
+    <div id="rsvp" className="flex flex-col items-center justify-between bg-white text-gray-800 min-h-screen">
       <Divider rotate={true}/>
       <div className="text-center px-4">
         <h2 className={`text-6xl font-semibold ${textCookie.className} mb-4`}>Kehadiran</h2>

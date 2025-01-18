@@ -6,17 +6,17 @@ export default function Event() {
   const { event } = useMarriageDetails();
 
   return (
-    <div id="event" className="flex flex-col items-center bg-white text-gray-800 pt-8 min-h-screen">
+    <div id="event" className="flex flex-col items-center bg-white text-gray-800 pt-16 min-h-screen">
       <div className="text-center px-4">
         <h2 className={`text-6xl font-semibold ${textCookie.className} mb-4`}>Detail Acara</h2>
-        <div className="mt-8 flex flex-col sm:flex-row w-full justify-center md:space-x-4 text-black">
-          <div className="flex-none w-full md:w-1/2 sm:w-full bg-gray-50 p-6 rounded-lg shadow mb-4 sm:mb-0">
+        <div className="mt-8 flex flex-col sm:flex-row w-full justify-center items-stretch sm:space-x-4 px-4 text-black">
+          <div className="w-full md:w-1/2 sm:w-full bg-gray-50 p-6 rounded-lg shadow mb-4 sm:mb-0">
             <h3 className="text-2xl font-semibold mb-2">Akad</h3>
             <hr className="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700"/>
             <p className="mb-2"><i className="fa-regular fa-calendar"></i> {event.akad.date}</p>
             <p><i className="fa-regular fa-clock"></i> {event.akad.time}</p>
           </div>
-          <div className="flex-none w-full md:w-1/2 sm:w-full bg-gray-50 p-6 rounded-lg shadow mb-4 sm:mb-0">
+          <div className="w-full md:w-1/2 sm:w-full bg-gray-50 p-6 rounded-lg shadow mb-4 sm:mb-0">
             <h3 className="text-2xl font-semibold mb-2">Resepsi</h3>
             <hr className="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700"/>
             <p className="mb-2"><i className="fa-regular fa-calendar"></i> {event.resepsi.date}</p>
