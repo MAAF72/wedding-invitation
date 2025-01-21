@@ -22,9 +22,10 @@ export interface MarriageDetails {
       time:string;
     },
     resepsi: {
+      session: string;
       date:  string;
       time: string;
-    },
+    }[],
     location: {
       name: string;
       maps: string;
@@ -33,6 +34,7 @@ export interface MarriageDetails {
   guest: {
     unique_code: string;
     name: string;
+    session: string;
   };
 }
 

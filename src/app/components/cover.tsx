@@ -12,12 +12,6 @@ export default function Cover(props: CoverProps) {
 
   return (
     <div id="cover" className="flex flex-col items-center justify-between bg-[#698fc8] text-white h-screen pb-36 sm:pb-24 px-12">
-      <span className="block sm:hidden">Extra Small (xs)</span>
-      <span className="hidden sm:block md:hidden">Small (sm)</span>
-      <span className="hidden md:block lg:hidden">Medium (md)</span>
-      <span className="hidden lg:block xl:hidden">Large (lg)</span>
-      <span className="hidden xl:block">Extra Large (xl)</span>
-
       {/* Top-Left Ornament */}
       <div className="absolute top-0 left-0 w-32 h-32 sm:w-48 sm:h-48 p-4">
         <Image

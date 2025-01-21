@@ -3,7 +3,13 @@ import { useMarriageDetails } from "@/app/contexts/marriage";
 import { textCookie } from "@/app/fonts/cookie";
 
 export default function Event() {
-  const { event } = useMarriageDetails();
+  const { guest, event } = useMarriageDetails();
+
+  let resepsi = event.resepsi.find(x => x.session == guest.session);
+
+  if (!resepsi) {
+    resepsi = event.resepsi[0];
+  }
 
   return (
     <div id="event" className="flex flex-col items-center bg-white text-gray-800 pt-16 min-h-screen">
@@ -19,8 +25,9 @@ export default function Event() {
           <div className="w-full md:w-1/2 sm:w-full bg-gray-50 p-6 rounded-lg shadow mb-4 sm:mb-0">
             <h3 className="text-2xl font-semibold mb-2">Resepsi</h3>
             <hr className="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700"/>
-            <p className="mb-2"><i className="fa-regular fa-calendar"></i> {event.resepsi.date}</p>
-            <p><i className="fa-regular fa-clock"></i> {event.resepsi.time}</p>
+            <p className="mb-2"><i className="fa-regular fa-calendar"></i> {resepsi.date}</p>
+            <p className="mb-2"><i className="fa-regular fa-clock"></i> {resepsi.time}</p>
+            <p><i className="fa-solid fa-business-time"></i> Sesi {resepsi.session}</p>
           </div>
         </div>
         {/* <div className="pt-4">

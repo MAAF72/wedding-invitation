@@ -17,6 +17,7 @@ import { marriageDetails } from "@/app/data";
 interface GuestData {
   unique_code: string;
   name: string;
+  session: string;
 }
 
 export default function Home() {
@@ -88,6 +89,7 @@ export default function Home() {
       guest: {
         unique_code: guest.unique_code,
         name: guest.name,
+        session: guest.session,
       }
     }}>
       <Cover openHandler={() => setOpen(open + 1)}/>

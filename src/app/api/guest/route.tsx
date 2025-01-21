@@ -26,6 +26,7 @@ export async function GET(req: NextRequest) {
     const data = {
       unique_code: guest.get("unique_code"),
       name: guest.get("name"),
+      session: guest.get("session"),
     }
 
     return NextResponse.json(data, { status: 200 });
