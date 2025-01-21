@@ -1,26 +1,31 @@
 import { NextRequest, NextResponse } from "next/server";
 
-import { supabase } from "@/app/utils/supabaseClient";
+import { sheet } from "@/app/utils/gsheetClient";
 
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
 
-  const slug = searchParams.get("slug");
+  const uniqueCode = searchParams.get("unique_code");
 
-  if (!slug) {
-    return NextResponse.json({ error: "Missing slug parameter" }, { status: 400 });
+  if (!uniqueCode) {
+    return NextResponse.json({ error: "Missing unique_code parameter" }, { status: 400 });
   }
 
   try {
-    const { data, error } = await supabase
-      .from("guests")
-      .select("slug, name")
-      .eq("slug", slug)
-      .single()
+    await sheet.loadInfo();
 
-    if (error) {
-      console.error("Error fetching guest:", error.message);
+    const guestSheet = sheet.sheetsByTitle["Aggregate Database"];
+    const guestRows = await guestSheet.getRows();
+
+    const guest = guestRows.find(r => r.get("unique_code") == uniqueCode);
+
+    if (!guest) {
       return NextResponse.json({ error: "Guest not found" }, { status: 404 });
+    }
+
+    const data = {
+      unique_code: guest.get("unique_code"),
+      name: guest.get("name"),
     }
 
     return NextResponse.json(data, { status: 200 });

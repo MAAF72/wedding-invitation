@@ -15,7 +15,7 @@ import WidgetMusic from "@/app/components/widget/music";
 import { marriageDetails } from "@/app/data";
 
 interface GuestData {
-  slug: string;
+  unique_code: string;
   name: string;
 }
 
@@ -26,11 +26,11 @@ export default function Home() {
 
   useEffect(() => {
     const queryParams = new URLSearchParams(window.location.search);
-    const guestSlug = queryParams.get("to") || "";
+    const guestUniqueCode = queryParams.get("to") || "";
 
-    if (guestSlug) {
+    if (guestUniqueCode) {
       const fetchGuest = async () => {
-        const response = await fetch(`/api/guest?slug=${guestSlug}`, {
+        const response = await fetch(`/api/guest?unique_code=${guestUniqueCode}`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -86,7 +86,7 @@ export default function Home() {
     <MarriageProvider value={{
       ...marriageDetails,
       guest: {
-        slug: guest.slug,
+        unique_code: guest.unique_code,
         name: guest.name,
       }
     }}>

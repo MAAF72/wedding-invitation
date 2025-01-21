@@ -31,7 +31,7 @@ export interface MarriageDetails {
     }
   };
   guest: {
-    slug: string;
+    unique_code: string;
     name: string;
   };
 }

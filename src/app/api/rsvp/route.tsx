@@ -1,33 +1,48 @@
 import { NextRequest, NextResponse } from "next/server";
 
-import { supabase } from "@/app/utils/supabaseClient";
+import { sheet } from "@/app/utils/gsheetClient";
 
 const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN!;
 const BOT_CHAT_ID = process.env.TELEGRAM_BOT_CHAT_ID!;
 
 export async function POST(req: NextRequest) {
   try {
-    const { guest_slug, guest_name, is_will_attend, message } = await req.json();
+    const { unique_code, is_will_attend, message } = await req.json();
 
-    console.log("RSVP Data:", { guest_slug, guest_name, is_will_attend, message });
+    console.log("RSVP Data:", { unique_code, is_will_attend, message });
 
-    const { error } = await supabase
-      .from("rsvps")
-      .insert([
-        {
-          guest: guest_slug,
-          is_will_attend: is_will_attend,
-          message: message
-        }
-      ])
-      .select()
+    await sheet.loadInfo();
+    
+    const guestSheet = sheet.sheetsByTitle["Aggregate Database"];
+    const guestRows = await guestSheet.getRows();
 
-    if (error) {
-      throw error;
+    const guest = guestRows.find(r => r.get("unique_code") == unique_code);
+
+    if (!guest) {
+      return NextResponse.json({ error: "Bad request, guest not exist" }, { status: 400 });
+    }
+
+    const rsvpSheet = sheet.sheetsByTitle["RSVP"];
+
+    await rsvpSheet.addRow({
+      unique_code: guest.get("unique_code"),
+      name: guest.get("name"),
+      relation: guest.get("relation"),
+      invited_by: guest.get("invited_by"),
+      is_will_attend:	is_will_attend,
+      message: message,
+      rsvp_at: new Date(),
+    })
+
+    let mentionID = "1875201674"
+
+    if (guest.get("invited_by") == "Fathiyyah") {
+      mentionID = "5413021403"
     }
     
     const notify_message = [
-      `<b>${guest_name}</b> ${is_will_attend ? 'akan hadir ✔️' : 'tidak hadir ❌'}`,
+      `Hai <a href="tg://user?id=${mentionID}">${guest.get("invited_by")}</a>,`,
+      `<b>${guest.get("name")} (${guest.get("relation")})</b> ${is_will_attend ? 'akan hadir &#10004;' : 'tidak hadir &#10060;'}`,
       ``,
       `Pesan:`,
       message,

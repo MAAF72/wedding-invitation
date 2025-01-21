@@ -18,13 +18,11 @@ export default function RSVP() {
     setSubmissionStatus("loading");
 
     try {
-      // Replace this with your actual submission logic (e.g., Supabase, API call)
       const response = await fetch("/api/rsvp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          guest_slug: guest.slug,
-          guest_name: guest.name,
+          unique_code: guest.unique_code,
           is_will_attend: attendance,
           message: message,
         }),
