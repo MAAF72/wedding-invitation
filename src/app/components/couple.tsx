@@ -30,6 +30,7 @@ export default function Couple() {
                 width={100} 
                 quality={100} 
                 priority={true} 
+                loading="eager"
                 sizes="100vw"
                 style={{
                   width: "100%",
@@ -50,6 +51,7 @@ export default function Couple() {
                 width={100} 
                 quality={100} 
                 priority={true} 
+                loading="eager"
                 sizes="100vw"
                 style={{
                   width: "100%",

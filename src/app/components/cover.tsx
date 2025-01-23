@@ -19,6 +19,9 @@ export default function Cover(props: CoverProps) {
           alt="Top Left Ornament"
           width={192}
           height={192}
+          quality={100} 
+          priority={true} 
+          loading="eager"
           style={{
             transform: "rotate(0deg)",
             filter: "invert(100%) brightness(100%)",
@@ -33,6 +36,9 @@ export default function Cover(props: CoverProps) {
           alt="Top Right Ornament"
           width={192}
           height={192}
+          quality={100} 
+          priority={true} 
+          loading="eager"
           style={{
             transform: "scaleX(-1)",
             filter: "invert(100%) brightness(100%)",
@@ -47,6 +53,9 @@ export default function Cover(props: CoverProps) {
           alt="Bottom Left Ornament"
           width={192}
           height={192}
+          quality={100} 
+          priority={true} 
+          loading="eager"
           style={{
             transform: "scaleY(-1)",
             filter: "invert(100%) brightness(100%)",
@@ -61,6 +70,9 @@ export default function Cover(props: CoverProps) {
           alt="Bottom Right Ornament"
           width={192}
           height={192}
+          quality={100} 
+          priority={true} 
+          loading="eager"
           style={{
             transform: "scaleX(-1) scaleY(-1)",
             filter: "invert(100%) brightness(100%)",
