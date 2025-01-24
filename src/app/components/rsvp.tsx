@@ -4,8 +4,6 @@ import { useMarriageDetails } from "@/app/contexts/marriage";
 
 import { textCookie } from "@/app/fonts/cookie";
 
-import Divider from "@/app/components/divider";
-
 export default function RSVP() {
   const { guest } = useMarriageDetails();
 
@@ -40,14 +38,13 @@ export default function RSVP() {
   };
 
   return (
-    <div id="rsvp" className="flex flex-col items-center justify-between bg-white text-gray-800 min-h-screen">
-      <Divider rotate={true}/>
-      <div className="text-center px-4">
+    <div id="rsvp" className="flex flex-col flex-grow items-center justify-between bg-white text-gray-800 pb-24">
+      <div className="flex flex-col items-center justify-center flex-grow text-center px-4">
         <h2 className={`text-6xl font-semibold ${textCookie.className} mb-4`}>Kehadiran</h2>
         <p className="text-lg pb-2">Merupakan suatu kehormatan dan kebahagian bagi kami, apabila <span className="font-semibold">{guest.name}</span> berkenan hadir untuk memberikan doa restu kepada kami</p>
         <p className="text-lg">Mohon konfirmasi kehadiran, terima kasih!</p>
 
-        <form className="mt-8 space-y-4" onSubmit={handleSubmit}>
+        <form className="mt-8 w-full space-y-8" onSubmit={handleSubmit}>
           <div className="flex items-center justify-center bg-white">
             <label className="relative w-60 h-16 bg-gray-200 rounded-full cursor-pointer flex items-center select-none group">
               <input 
@@ -88,7 +85,6 @@ export default function RSVP() {
 
         </form>
       </div>
-      <Divider/>
     </div>
   )
 }

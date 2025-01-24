@@ -9,6 +9,7 @@ import Ayah from "@/app/components/ayah";
 import Couple from "@/app/components/couple";
 import Event from "@/app/components/event";
 import RSVP from "@/app/components/rsvp";
+// import LoveStory from "@/app/components/loveStory";
 import Closing from "@/app/components/closing";
 import WidgetMusic from "@/app/components/widget/music";
 
@@ -99,6 +100,7 @@ export default function Home() {
           <Couple/>
           <Event/>
           <RSVP/>
+          {/* <LoveStory/> */}
           <Closing/>
           <WidgetMusic/>
         </>

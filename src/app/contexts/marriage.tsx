@@ -4,6 +4,8 @@ export interface MarriageDetails {
   groom: {
     name: string;
     nickname: string;
+    telegramMentionID: string;
+    instagramUsername: string;
     order: string;
     father: string;
     mother: string;
@@ -11,24 +13,32 @@ export interface MarriageDetails {
   bride: {
     name: string;
     nickname: string;
+    telegramMentionID: string;
+    instagramUsername: string;
     order: string;
     father: string;
     mother: string;
   };
   event: {
     mainDate: string;
+    formatDate: string;
     akad: {
-      date: string;
-      time:string;
+      mainDate: string;
+      formatDate: string;
+      startDate: string;
+      endDate: string;
     },
     resepsi: {
       session: string;
-      date:  string;
-      time: string;
+      mainDate:  string;
+      formatDate: string;
+      startDate: string;
+      endDate: string;
     }[],
     location: {
       name: string;
-      maps: string;
+      mapsAddress: string;
+      mapsEmbed: string;
     }
   };
   guest: {
@@ -36,6 +46,11 @@ export interface MarriageDetails {
     name: string;
     session: string;
   };
+  loveStory: {
+    title: string;
+    formatDate: string;
+    description: string;
+  }[];
 }
 
 export const MarriageContext = createContext<MarriageDetails | undefined>(undefined);

@@ -4,8 +4,11 @@ export default function WidgetMusic() {
   const [isPlaying, setIsPlaying] = useState<boolean>(false); 
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
+  const audioFile = "/assets/audios/bgm.mp3"
+  // const audioFile = "/assets/audios/ANDMESH - ANUGERAH TERINDAH.mp4"
+
   useEffect(() => {
-    audioRef.current = new Audio("/assets/audios/bgm.mp3");
+    audioRef.current = new Audio(audioFile);
     audioRef.current.loop = true;
 
     audioRef.current.play().then(() =>setIsPlaying(true)).catch(() => {});

@@ -7,7 +7,7 @@ export default function Closing() {
   const { guest } = useMarriageDetails();
 
   return (
-    <div id="closing" className="flex flex-col items-center justify-between bg-[#698fc8] text-white min-h-screen">
+    <div id="closing" className="flex flex-col items-center justify-between bg-[#698fc8] text-white pb-24">
       <div className="text-center px-4">
         <div className="pt-16">
           <p>Terima kasih atas perhatian dan doa restu <span className="font-semibold">{guest.name}</span>, yang menjadi kebahagiaan serta kehormatan besar bagi kami</p>
@@ -22,7 +22,7 @@ export default function Closing() {
         <hr/>
 
         <div className="pt-12">
-          <small>Build with<i className="fa-solid fa-heart mx-1"></i>Fatih</small>
+          <small>Build with<i className="fa-solid fa-heart mx-1"></i><a href="https://www.instagram.com/altair.go/">Fatih</a></small>
         </div>
       </div>
     </div>

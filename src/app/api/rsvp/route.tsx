@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 import { sheet } from "@/app/utils/gsheetClient";
+import { marriageDetails } from "@/app/data";
 
 const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN!;
 const BOT_CHAT_ID = process.env.TELEGRAM_BOT_CHAT_ID!;
@@ -34,11 +35,7 @@ export async function POST(req: NextRequest) {
       rsvp_at: new Date(),
     })
 
-    let mentionID = "1875201674"
-
-    if (guest.get("invited_by") == "Fathiyyah") {
-      mentionID = "5413021403"
-    }
+    const mentionID = (guest.get("invited_by") == marriageDetails.groom.nickname ? marriageDetails.groom.telegramMentionID : marriageDetails.bride.telegramMentionID)
     
     const notify_message = [
       `Hai <a href="tg://user?id=${mentionID}">${guest.get("invited_by")}</a>,`,

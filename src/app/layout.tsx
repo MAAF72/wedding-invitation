@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Roboto } from 'next/font/google'
- 
-import "./globals.css";
 import Script from "next/script";
+import { Roboto } from 'next/font/google'
+
+import "@/app/globals.css";
+import { marriageDetails } from "@/app/data";
 
 const roboto = Roboto({
   weight: ['100', '300', '400', '500', '700', '900'],
@@ -12,8 +13,8 @@ const roboto = Roboto({
 
 
 export const metadata: Metadata = {
-  title: "Undangan Pernikahan - Fatih & Fathiyyah",
-  description: "Undangan Pernikahan - Fatih & Fathiyyah",
+  title: `Undangan Pernikahan - ${marriageDetails.groom.nickname} & ${marriageDetails.bride.nickname}`,
+  description: `Undangan Pernikahan - ${marriageDetails.groom.nickname} & ${marriageDetails.bride.nickname}`,
 };
 
 export default function RootLayout({

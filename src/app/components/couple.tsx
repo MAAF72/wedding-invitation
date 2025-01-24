@@ -9,7 +9,7 @@ export default function Couple() {
   const { groom, bride, guest } = useMarriageDetails();
 
   return (
-    <div id="couple" className="flex justify-center bg-white text-gray-800 min-h-screen">
+    <div id="couple" className="flex justify-center bg-white text-gray-800 min-h-screen pb-24">
       <div className="text-center px-4">
         <div className={`${textCookie.className} text-center`}>
           <span className="text-4xl bg-clip-text mt-2">بِسمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</span>

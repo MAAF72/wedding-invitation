@@ -93,7 +93,7 @@ export default function Cover(props: CoverProps) {
       </div>
 
       <div className="text-center">
-        <button onClick={props.openHandler} id="open-invitation" className="bg-white hover:bg-gray-100 text-[#698fc8] font-bold py-2 px-6 rounded-lg shadow-lg transition">
+        <button onClick={props.openHandler} id="open-invitation" className="bg-white hover:bg-gray-100 text-[#698fc8] font-bold px-6 py-3 rounded-lg shadow-lg transition">
           Buka Undangan
         </button>
       </div>
