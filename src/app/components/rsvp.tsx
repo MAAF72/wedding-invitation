@@ -46,14 +46,27 @@ export default function RSVP() {
 
         <form className="mt-8 w-full space-y-8" onSubmit={handleSubmit}>
           <div className="flex items-center justify-center bg-white">
-            <label className="relative w-60 h-16 bg-gray-200 rounded-full cursor-pointer flex items-center select-none group">
+            <label 
+              className="relative w-60 h-16 bg-gray-200 rounded-full cursor-pointer flex items-center select-none group"
+              onClick={(e) => {
+                const rect = e.currentTarget.getBoundingClientRect()
+            
+                const midpoint = rect.left + rect.width / 2
+            
+                if (e.clientX < midpoint && !attendance) {
+                  setAttendance(true)
+                } else if (e.clientX >= midpoint && attendance) {
+                  setAttendance(false)
+                }
+              }}
+            >
               <input 
                 name="rsvp-check" 
                 className="peer/rsvp hidden" 
                 type="checkbox" 
                 value="true" 
                 checked={attendance} 
-                onChange={() => setAttendance((prev) => !prev)} 
+                readOnly
               />
 
               <div className="w-1/2 h-full bg-[#c86969] rounded-full transition-all shadow-md absolute left-1/2 peer-checked/rsvp:left-0 peer-checked/rsvp:bg-[#698fc8] group-hover:shadow-xl"></div>
