@@ -29,6 +29,7 @@ export async function POST(req: NextRequest) {
       unique_code: guest.get("unique_code"),
       name: guest.get("name"),
       relation: guest.get("relation"),
+      domicile: guest.get("domicile"),
       invited_by: guest.get("invited_by"),
       is_will_attend:	is_will_attend,
       message: message,
@@ -39,7 +40,7 @@ export async function POST(req: NextRequest) {
     
     const notify_message = [
       `Hai <a href="tg://user?id=${mentionID}">${guest.get("invited_by")}</a>,`,
-      `<b>${guest.get("name")} (${guest.get("relation")})</b> ${is_will_attend ? 'akan hadir &#10004;' : 'tidak hadir &#10060;'}`,
+      `<b>${guest.get("name")} (${guest.get("relation")})</b> dari ${guest.get("domicile")} ${is_will_attend ? 'akan hadir &#10004;' : 'tidak hadir &#10060;'}`,
       ``,
       `Pesan:`,
       message,
