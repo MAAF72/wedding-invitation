@@ -98,9 +98,9 @@ export default function Event() {
             <p><i className="fa-solid fa-business-time"></i> Sesi {resepsi.session}</p>
           </div>
         </div>
-        {/* <div className="pt-4">
-          <i>*Acara akan diselenggarakan dengan tamu pria dan wanita yang dipisah (Walimatul Infishal)</i>
-        </div> */}
+        <div className="pt-4">
+          <i>*Acara InsyaAllah akan diselenggarakan dengan tamu pria dan wanita yang dipisah (Walimatul Infishal)</i>
+        </div>
         <div className="mt-12">
           <p className="text-xl font-semibold"><i className="fa-solid fa-location-dot"></i> {event.location.name}</p>
           <div className="relative overflow-hidden pb-[75%] mt-4 rounded-xl">
