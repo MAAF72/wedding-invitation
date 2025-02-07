@@ -42,7 +42,7 @@ export default function Couple() {
             </div>
             <h3 className="text-2xl font-semibold pb-2">{groom.name}</h3>
             <p>Putra {groom.order} dari</p>
-            <p>{groom.father} dan {groom.mother}</p>
+            <p><span className="font-bold">{groom.father}</span> dan <span className="font-bold">{groom.mother}</span></p>
           </div>
           <div id="profile-bride" className="w-full md:w-1/4 sm:w-full bg-gray-200 p-6 rounded-lg shadow mb-4 sm:mb-0">
             <div className="relative profile-photo mx-auto mb-8 w-1/2">
@@ -63,7 +63,7 @@ export default function Couple() {
             </div>
             <h3 className="text-2xl font-semibold pb-2">{bride.name}</h3>
             <p>Putri {bride.order} dari</p>
-            <p>{bride.father} dan {bride.mother}</p>
+            <p><span className="font-bold">{bride.father}</span> dan <span className="font-bold">{bride.mother}</span></p>
           </div>
         </div>
       </div>

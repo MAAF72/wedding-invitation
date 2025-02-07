@@ -5,7 +5,7 @@ export const marriageDetails = {
     telegramMentionID: "1875201674",
     instagramUsername: "altair.go",
     order: "Pertama",
-    father: "Bapak Amin Syafi'i",
+    father: "Bapak Amin Syafii",
     mother: "Ibu Ida Ristianti",
   },
   bride: {
