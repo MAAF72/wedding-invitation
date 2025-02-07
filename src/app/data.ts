@@ -50,7 +50,7 @@ export const marriageDetails = {
       },
     ],
     location: {
-      name: "Masjid Jami Al-Muhajirin, Bekasi",
+      name: "Aula Masjid Jami Al-Muhajirin, Alinda, Bekasi",
       mapsAddress: "Masjid Jami Al-Muhajirin, Q2X5+P48, Jl. Bumi Alinda Kencana, RT.007/RW.021, Kaliabang Tengah, Kec. Bekasi Utara, Kota Bks, Jawa Barat 17125, Indonesia",
       mapsEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.476306587357!2d107.0078312!3d-6.200721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698bfd667e32b7%3A0x345ea61e5269ba4c!2sMasjid%20Jami%20Al-Muhajirin!5e0!3m2!1sen!2sid!4v1734969343441!5m2!1sen!2sid"
     }
